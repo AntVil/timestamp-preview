@@ -1,0 +1,64 @@
+{
+  "name": "timestamp-preview",
+  "publisher": "AntVil",
+  "displayName": "timestamp-preview",
+  "description": "A helper tool for previewing timestamps.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AntVil/timestamp-preview"
+  },
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "AntVil"
+  },
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "keywords": [
+    "timestamp",
+    "converter",
+    "date",
+    "conversion",
+    "preview"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "*",
+        "aliases": ["Any Language"],
+        "extensions": ["*"]
+      }
+    ],
+    "hoverProvider": [
+      {
+        "language": "*",
+        "scheme": "file"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.82.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3",
+    "@vscode/test-electron": "^2.3.2"
+  }
+}
