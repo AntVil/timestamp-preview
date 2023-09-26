@@ -5,7 +5,7 @@ const fancyNumberRegex = /[0-9_]+/;
 function activate(context) {
 	// timestamp to iso (human readable)
     context.subscriptions.push(
-        vscode.languages.registerHoverProvider("*", {
+        vscode.languages.registerHoverProvider({ scheme: 'file' }, {
             provideHover(document, position, token) {
                 const range = document.getWordRangeAtPosition(position, /[\d_]+/);
 
@@ -39,7 +39,7 @@ function activate(context) {
 
 	// iso (human readable) to timestamp
 	context.subscriptions.push(
-        vscode.languages.registerHoverProvider("*", {
+        vscode.languages.registerHoverProvider({ scheme: 'file' }, {
             provideHover(document, position, token) {
                 const range = document.getWordRangeAtPosition(position, /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?([-+]\d{2}:\d{2}|Z)/);
 

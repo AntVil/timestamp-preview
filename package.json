@@ -31,16 +31,8 @@
   ],
   "main": "./extension.js",
   "contributes": {
-    "languages": [
-      {
-        "id": "*",
-        "aliases": ["Any Language"],
-        "extensions": ["*"]
-      }
-    ],
     "hoverProvider": [
       {
-        "language": "*",
         "scheme": "file"
       }
     ]
