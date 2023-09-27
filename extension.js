@@ -41,13 +41,16 @@ function activate(context) {
 	context.subscriptions.push(
         vscode.languages.registerHoverProvider({ scheme: 'file' }, {
             provideHover(document, position, token) {
-                const range = document.getWordRangeAtPosition(position, /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?([-+]\d{2}:\d{2}|Z)/);
+                const range = document.getWordRangeAtPosition(position, /\d{4}(-| |_|\/|\.)\d{2}(-| |_|\/|\.)\d{2}T\d{2}(-| |_|\/|:|\.)\d{2}(-| |_|\/|:|\.)\d{2}(\.\d{3})?([-+]\d{2}(:\d{2}|Z)?)/gm);
 
 				if(range === undefined) {
 					return null;
 				}
 
-				const date = new Date(document.getText(range));
+				const filteredRange = document.getText(range).replace(/( |_|\/|\.)/gm, "-")
+				console.log(filteredRange)
+
+				const date = new Date(filteredRange);
 
                 const hoverContent = new vscode.MarkdownString(
 					`${date.getTime() / 1000} (s)\n\n${date.getTime()} (ms)`
