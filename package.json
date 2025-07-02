@@ -35,6 +35,20 @@
       {
         "scheme": "file"
       }
+    ],
+    "commands":[
+        {
+            "command": "timestamp-preview.toTimestampS",
+            "title": "to Timestamp (s)"
+        },
+        {
+            "command": "timestamp-preview.toTimestampMs",
+            "title": "to Timestamp (ms)"
+        },
+        {
+            "command": "timestamp-preview.toISODateString",
+            "title": "to Date String"
+        }
     ]
   },
   "scripts": {

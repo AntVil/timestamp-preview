@@ -7,3 +7,5 @@ This extension can convert timestamps into human readable dates.
 ## Features
 - utc timestamp (s/ms) to iso date string
 - iso date string to timestamp
+- converting selection to utc timestamp (s/ms)
+- converting selection to iso date string
